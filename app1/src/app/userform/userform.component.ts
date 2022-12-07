@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-userform',
@@ -6,10 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./userform.component.css']
 })
 export class UserformComponent {
+  constructor(public userService:UserService){
+
+  }
   //state
-  firstname = "Pariwesh";
+  user={
+    firstname : "Pariwesh",
+    gender: "F"
+  }
   public save(){
     console.log("test");
-    console.error('error has happed'+this.firstname)
+    this.userService.save(this.user);
+    console.error('error has happed'+this.user)
   }
 }
