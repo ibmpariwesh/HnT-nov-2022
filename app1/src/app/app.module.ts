@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UserformComponent } from './userform/userform.component';
+import { OrderformComponent } from './orderform/orderform.component';
 
 @NgModule({//decorator
   declarations: [
     AppComponent,
-    UserformComponent
+    UserformComponent,
+    OrderformComponent
   ],
   imports: [
     BrowserModule, FormsModule

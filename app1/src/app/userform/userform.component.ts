@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class UserformComponent {
   //state
   firstname = "Pariwesh";
+  public save(){
+    console.log("test");
+    console.error('error has happed'+this.firstname)
+  }
 }
