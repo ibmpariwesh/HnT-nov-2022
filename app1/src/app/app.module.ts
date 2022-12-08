@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserformComponent } from './userform/userform.component';
 import { OrderformComponent } from './orderform/orderform.component';
-
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({//decorator
   declarations: [
     AppComponent,
@@ -13,7 +13,7 @@ import { OrderformComponent } from './orderform/orderform.component';
     OrderformComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

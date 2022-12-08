@@ -1,8 +1,12 @@
 <p>userform </p>
 <div>
-    <input [(ngModel)]="user.firstname">
+    <input [(ngModel)]="user.username">
+    <input [(ngModel)]="user.email">
+    <input [(ngModel)]="user.password">
+   
+   
     <input type="radio" [(ngModel)]='user.gender' value="M">Male
     <input type="radio" [(ngModel)]='user.gender' value='F'>Female
 
-    <button (click)="save()">Save</button>
+    <button (click)="register()">Register</button>
 </div>

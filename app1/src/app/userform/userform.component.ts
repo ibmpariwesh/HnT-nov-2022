@@ -12,12 +12,18 @@ export class UserformComponent {
   }
   //state
   user={
-    firstname : "Pariwesh",
+    username : "Pariwesh",
+    email:"pariweshg@gmail.com",
+    password:"",
     gender: "F"
   }
-  public save(){
+  public register(){
     console.log("test");
-    this.userService.save(this.user);
+    const observable = this.userService.save(this.user);
+    observable.subscribe((response:any)=>{
+      console.log(response);
+      
+    })
     console.error('error has happed'+this.user)
   }
 }
