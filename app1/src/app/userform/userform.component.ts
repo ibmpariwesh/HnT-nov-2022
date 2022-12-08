@@ -7,23 +7,25 @@ import { UserService } from '../user.service';
   styleUrls: ['./userform.component.css']
 })
 export class UserformComponent {
-  constructor(public userService:UserService){
+  constructor(public userService: UserService) {
 
   }
   //state
-  user={
-    username : "Pariwesh",
-    email:"pariweshg@gmail.com",
-    password:"",
+  user = {
+    username: "Pariwesh2",
+    email: "pariweshg@gmail.com",
+    password: "Testing123",
     gender: "F"
   }
-  public register(){
-    console.log("test");
-    const observable = this.userService.save(this.user);
-    observable.subscribe((response:any)=>{
-      console.log(response);
-      
+  public signin() {
+    const observable = this.userService.signin(this.user);
+    observable.subscribe((response: any) => {
+      sessionStorage.setItem('token', response.accessToken);
     })
-    console.error('error has happed'+this.user)
+  }
+  public signup() {
+    const observable = this.userService.signup(this.user);
+    observable.subscribe((response: any) => {
+    })
   }
 }
