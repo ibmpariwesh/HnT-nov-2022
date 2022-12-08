@@ -1,12 +1,13 @@
 <p>userform </p>
-<div>
+<form novalidate  #f="ngForm"   name="form">
     <input [(ngModel)]="user.username">
     <input [(ngModel)]="user.email">
-    <input [(ngModel)]="user.password">
-   
-   
-    <input type="radio" [(ngModel)]='user.gender' value="M">Male
-    <input type="radio" [(ngModel)]='user.gender' value='F'>Female
-
+    <input [(ngModel)]="user.password" required minlength="6" #password="ngModel"   name="password">
+    <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors['required']">Password is required</div>
+        <div *ngIf="password.errors['minlength']">
+            Password must be at least 6 characters
+        </div>
+    </div>
     <button (click)="register()">Register</button>
-</div>
+</form>
